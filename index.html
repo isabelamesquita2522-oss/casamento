@@ -6,16 +6,14 @@
 <title>Allan &amp; Isabela — Nosso Casamento</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Fontes elegantes que se assemelham à caligrafia fina e delicada do convite original -->
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<!-- Fontes: Cursiva elegante do convite + Fontes clássicas de alta legibilidade para o menu -->
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-cream: #fbf9f5;
-    --text-dark: #3b2314;
-    --gold: #b98f55;
-    --gold-light: #d9bd8d;
-    --gray-soft: #f4ede2;
-    --border-color: rgba(185, 143, 85, 0.3);
+    --bg-convite: #f7f4ee; /* O tom creme exato do fundo do seu convite */
+    --marrom-escuro: #2b1a0f; /* Contraste máximo para leitura perfeita */
+    --verde-folha: #5a6b5c; /* Tom dos galhos das flores brancas */
+    --ouro-velho: #a38245;
   }
 
   * {
@@ -25,364 +23,297 @@
   }
 
   body {
-    background-color: var(--bg-cream);
-    color: var(--text-dark);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
+    background-color: var(--bg-convite);
+    color: var(--marrom-escuro);
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
   }
 
-  /* Moldura fina externa para remeter ao acabamento do convite impresso */
-  .wedding-frame {
+  /* Fotos de fundo aplicadas de forma ultra-suave e poética (esboço que faz brilhar os olhos) */
+  .backdrop-overlay {
     position: fixed;
-    inset: 12px;
-    border: 1px solid var(--gold);
-    pointer-events: none;
-    z-index: 99;
-  }
-  .wedding-frame::before {
-    content: '';
-    position: absolute; 
-    inset: 6px;
-    border: 1px solid var(--gold-light);
-    opacity: 0.5;
-  }
-
-  /* Ilustrações florais sutis e transparentes nas laterais para emular as flores brancas */
-  .bg-floral {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.12"><path d="M50 20 C45 35, 30 45, 50 80 C70 45, 55 35, 50 20 Z" fill="%23b98f55"/><circle cx="50" cy="45" r="3" fill="%233b2314"/><path d="M30 40 C45 45, 50 30, 80 50 C50 70, 45 55, 30 40 Z" fill="%23b98f55"/></svg>');
-    background-repeat: no-repeat;
-    background-size: contain;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Substitua o link abaixo pela URL da sua foto favorita do casal */
+    background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.04; /* Apenas um sussurro da imagem para não atrapalhar a leitura */
     pointer-events: none;
     z-index: 1;
   }
-  .floral-top-left { top: 20px; left: 20px; transform: rotate(0deg); }
-  .floral-bottom-right { bottom: 20px; right: 20px; transform: rotate(180deg); }
+
+  /* Ilustração Floral Superior (Flores Brancas e galhos verdes do convite) */
+  .floral-header {
+    width: 100%;
+    height: 180px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" fill="none"><path d="M100 20 C150 50, 200 10, 300 60 C400 110, 450 40, 500 80" stroke="%235a6b5c" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="300" cy="60" r="15" fill="%23ffffff" stroke="%235a6b5c" stroke-width="1"/><circle cx="300" cy="60" r="4" fill="%23e8d8b8"/><circle cx="450" cy="40" r="10" fill="%23ffffff" stroke="%235a6b5c" stroke-width="1"/><path d="M900 20 C850 50, 800 10, 700 60 C600 110, 550 40, 500 80" stroke="%235a6b5c" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="700" cy="60" r="15" fill="%23ffffff" stroke="%235a6b5c" stroke-width="1"/><circle cx="700" cy="60" r="4" fill="%23e8d8b8"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
 
   .container {
-    max-width: 650px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 120px 24px 80px 24px;
     position: relative;
     z-index: 10;
-  }
-
-  header {
     text-align: center;
-    margin-bottom: 50px;
   }
 
-  /* Estilo da caligrafia refinada idêntica ao convite */
-  .caligrafia-convite {
+  /* Caligrafia idêntica ao convite */
+  .nomes-noivos {
     font-family: 'Alex Brush', cursive;
-    font-size: clamp(3rem, 10vw, 4.8rem);
-    color: var(--text-dark);
-    line-height: 1.1;
-    margin-bottom: 15px;
-  }
-
-  .subtitulo {
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 30px;
-  }
-
-  /* A frase do convite sem quebras de linha abruptas */
-  .frase-convite {
-    font-size: 1.35rem;
-    font-style: italic;
-    color: var(--text-dark);
-    margin: 40px auto;
-    max-width: 90%;
-    line-height: 1.5;
-    text-align: center;
-    font-weight: 300;
-  }
-
-  .divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin: 40px auto;
-  }
-  .divider .line {
-    width: 60px;
-    height: 1px;
-    background-color: var(--border-color);
-  }
-  .divider .dot {
-    width: 6px;
-    height: 6px;
-    background-color: var(--gold);
-    border-radius: 50%;
-  }
-
-  /* Seção de Fotos de Fundo / Esboço Suave */
-  .background-photos {
-    position: relative;
-    width: 100%;
-    height: 280px;
-    margin: 40px 0;
-    overflow: hidden;
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-  }
-  /* Aplica a foto de forma ultra-suave, como marca d'água/esboço que faz brilhar os olhos sem poluir */
-  .background-photos .photo-backdrop {
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/jpeg;base64,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');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.1; /* Super discreta para brilhar de forma gentil e não cansar a vista */
-    filter: sepia(0.2) grayscale(0.2);
-  }
-  .background-photos .photo-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5rem;
-    font-style: italic;
-    font-weight: 300;
-  }
-
-  /* CARDÁPIO REFORMULADO (Simples, sofisticado e marcante) */
-  .menu-section {
-    background-color: #ffffff;
-    border: 1px solid var(--gold-light);
-    border-radius: 4px;
-    padding: 50px 40px;
-    margin-top: 50px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-    text-align: center;
-  }
-
-  .menu-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-dark);
-    margin-bottom: 35px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10px;
-    display: inline-block;
-  }
-
-  /* Lista limpa, sem o "lado a lado de bar" anterior */
-  .menu-category {
-    margin-bottom: 30px;
-  }
-
-  .menu-category-title {
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 15px;
-    font-weight: 600;
-  }
-
-  .menu-item {
-    font-size: 1.25rem;
-    color: var(--text-dark);
-    margin-bottom: 8px;
+    font-size: clamp(3.5rem, 12vw, 5rem);
+    color: var(--marrom-escuro);
+    margin-bottom: 5px;
     font-weight: 400;
   }
 
-  .menu-item-desc {
-    font-size: 0.95rem;
-    color: #6e5c51;
+  .subtitulo {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--verde-folha);
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+
+  /* Frase sem quebras, inteira e linear */
+  .frase-convite {
+    font-family: 'Playfair Display', serif;
     font-style: italic;
-    margin-bottom: 18px;
+    font-size: 1.35rem;
+    color: var(--marrom-escuro);
+    margin: 30px 0;
+    white-space: nowrap; /* Garante que a frase fique inteira na mesma linha */
+    overflow-x: auto; /* Evita quebra caso a tela do celular seja muito pequena */
+    padding-bottom: 5px;
   }
 
-  /* Área do PIX & Lista de Presentes */
-  .gifts-section {
-    margin-top: 60px;
-    text-align: center;
-    padding: 40px 20px;
-    background-color: var(--gray-soft);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+  .divider {
+    width: 80px;
+    height: 1px;
+    background-color: var(--ouro-velho);
+    margin: 40px auto;
+    opacity: 0.5;
   }
 
-  .pix-highlight-box {
-    background-color: #ffffff;
-    border: 2px dashed var(--gold);
-    padding: 30px 20px;
-    border-radius: 4px;
+  /* CARDÁPIO REFORMULADO: Elegante, vertical e de leitura limpa */
+  .cardapio-box {
+    margin: 50px 0;
+    padding: 20px 10px;
+  }
+
+  .cardapio-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--marrom-escuro);
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .cardapio-titulo::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: var(--verde-folha);
+    margin: 10px auto 0;
+  }
+
+  .cardapio-secao {
     margin-bottom: 35px;
   }
 
-  .pix-title {
-    font-size: 1.4rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+  .secao-titulo {
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text-dark);
+    color: var(--verde-folha);
+    font-weight: 600;
     margin-bottom: 10px;
   }
 
-  .pix-key {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: var(--text-dark);
-    background-color: #f7f3eb;
-    display: inline-block;
-    padding: 8px 16px;
-    border-radius: 4px;
-    letter-spacing: 0.05em;
-    margin: 10px 0;
+  .prato-nome {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--marrom-escuro);
   }
 
-  .discreet-note {
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    line-height: 1.6;
-    margin: 20px auto 10px;
-    max-width: 90%;
-  }
-
-  .gifts-list {
-    margin-top: 20px;
-    font-size: 1.05rem;
-    color: var(--text-dark);
+  .prato-detalhe {
+    font-size: 0.95rem;
+    color: #55443a;
     font-style: italic;
-    line-height: 1.8;
+    margin-top: 2px;
   }
 
-  .gifts-colors {
-    margin-top: 15px;
+  /* SEÇÃO DE PRESENTES E PIX BASTANTE DESTACADO */
+  .presentes-box {
+    background-color: #ffffff;
+    border: 1px solid rgba(163, 130, 69, 0.2);
+    border-radius: 8px;
+    padding: 40px 30px;
+    margin-top: 60px;
+    box-shadow: 0 10px 30px rgba(43, 26, 15, 0.03);
+  }
+
+  .pix-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--marrom-escuro);
+    margin-bottom: 10px;
+  }
+
+  .pix-descricao {
+    font-size: 0.95rem;
+    color: #55443a;
+    margin-bottom: 25px;
+  }
+
+  /* Chave pix super visível e fácil de copiar */
+  .pix-chave-container {
+    background-color: var(--bg-convite);
+    border: 2px dashed var(--ouro-velho);
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--marrom-escuro);
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+
+  /* Observação discreta e elegante */
+  .observacao-discreta {
+    border-top: 1px solid #f0eae1;
+    padding-top: 25px;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .obs-titulo {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--verde-folha);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .obs-texto {
     font-size: 0.9rem;
+    color: #66554a;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .lista-itens {
+    font-size: 0.95rem;
+    color: var(--marrom-escuro);
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .preferencia-cores {
+    margin-top: 15px;
+    font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--verde-folha);
     font-weight: 600;
+    text-align: center;
   }
 
   footer {
-    text-align: center;
-    margin-top: 60px;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
+    margin-top: 80px;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--verde-folha);
     text-transform: uppercase;
-  }
-
-  /* Responsividade */
-  @media (max-width: 600px) {
-    .container {
-      padding: 40px 16px;
-    }
-    .menu-section {
-      padding: 30px 20px;
-    }
-    .caligrafia-convite {
-      font-size: 3.2rem;
-    }
   }
 </style>
 </head>
 <body>
 
-<div class="wedding-frame"></div>
+<div class="backdrop-overlay"></div>
+<div class="floral-header"></div>
 
 <div class="container">
-  <div class="bg-floral floral-top-left"></div>
-  <div class="bg-floral floral-bottom-right"></div>
+  
+  <!-- Cabeçalho com os nomes na fonte elegante -->
+  <h1 class="nomes-noivos">Allan &amp; Isabela</h1>
+  <div class="subtitulo">Convidam para sua recepção</div>
 
-  <!-- Cabeçalho idêntico à caligrafia do Convite -->
-  <header>
-    <div class="subtitulo">Convidam para sua recepção</div>
-    <h1 class="caligrafia-convite">Allan &amp; Isabela</h1>
-    <div class="divider">
-      <div class="line"></div>
-      <div class="dot"></div>
-      <div class="line"></div>
-    </div>
-  </header>
-
-  <!-- Frase Inteira sem quebras abruptas -->
+  <!-- Frase do convite inteira, linear e sem quebra -->
   <div class="frase-convite">
     "Do caos da vida, escolhemos um ao outro."
   </div>
 
-  <!-- Foto de Fundo Delicada (Esboço/Marca d'água elegante) -->
-  <div class="background-photos">
-    <div class="photo-backdrop"></div>
-    <div class="photo-text">
-      <span style="color: #3b2314; font-family: 'Alex Brush', cursive; font-size: 2.5rem; text-shadow: 1px 1px 10px rgba(255,255,255,0.8);">Allan &amp; Isabela</span>
-    </div>
-  </div>
+  <div class="divider"></div>
 
-  <!-- CARDÁPIO SOFISTICADO (Clean, simples e vertical) -->
-  <section class="menu-section">
-    <h2 class="menu-title">Cardápio do Dia</h2>
-    
-    <div class="menu-category">
-      <h3 class="menu-category-title">Coquetel de Entrada</h3>
-      <div class="menu-item">Canapés Finos</div>
-      <div class="menu-item-desc">Opções frias e quentes harmonizadas com molhos cítricos.</div>
+  <!-- CARDÁPIO VERTICAL, LIMPO E SOFISTICADO -->
+  <section class="cardapio-box">
+    <h2 class="cardapio-titulo">Cardápio</h2>
+
+    <div class="cardapio-secao">
+      <h3 class="secao-titulo">Entradas</h3>
+      <div class="prato-nome">Canapés Finos &amp; Salgados Assados</div>
+      <div class="prato-detalhe">Seleção leve e crocante para iniciar a noite.</div>
     </div>
 
-    <div class="menu-category">
-      <h3 class="menu-category-title">Prato Principal</h3>
-      <div class="menu-item">Massa Artesanal e Grelhados</div>
-      <div class="menu-item-desc">Ravioli ao molho quatro queijos e filé mignon ao molho madeira.</div>
+    <div class="cardapio-secao">
+      <h3 class="secao-titulo">Prato Principal</h3>
+      <div class="prato-nome">Massa Artesanal ao Molho Quatro Queijos</div>
+      <div class="prato-detalhe">Acompanhada de filé mignon grelhado ao molho madeira.</div>
     </div>
 
-    <div class="menu-category">
-      <h3 class="menu-category-title">Sobremesa</h3>
-      <div class="menu-item">Doces Finos e Bolo de Noiva</div>
-      <div class="menu-item-desc">Seleção especial do buffet.</div>
-    </div>
-
-    <div class="menu-category">
-      <h3 class="menu-category-title">Bebidas</h3>
-      <div class="menu-item">Água, Sucos, Refrigerantes e Coquetéis</div>
-      <div class="menu-item-desc">Serviço de bar sofisticado e vinhos selecionados.</div>
+    <div class="cardapio-secao">
+      <h3 class="secao-titulo">Bebidas</h3>
+      <div class="prato-nome">Drinks, Vinhos, Sucos &amp; Refrigerantes</div>
+      <div class="prato-detalhe">Bar de coquetéis aberto durante todo o evento.</div>
     </div>
   </section>
 
-  <!-- SEÇÃO DE PRESENTES & PIX -->
-  <section class="gifts-section">
-    <div class="pix-highlight-box">
-      <h2 class="pix-title">Presente dos Noivos</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 15px;">Se desejar nos presentear, nossa preferência é por meio de PIX:</p>
-      <!-- Chave PIX fictícia / substitua pelo seu dado real -->
-      <div class="pix-key">chavepix@casamento.com</div>
-      <p style="font-size: 0.95rem; color: #6e5c51; margin-top: 10px;">Banco Exemplo | Allan e Isabela</p>
+  <!-- SEÇÃO DE PRESENTES E PIX DESTACADO -->
+  <section class="presentes-box">
+    <h2 class="pix-title">Presente dos Noivos</h2>
+    <p class="pix-descricao">Nossa maior alegria é compartilhar este dia com você. Caso queira nos presentear, nossa preferência é por meio de PIX:</p>
+    
+    <!-- Cole sua chave pix real aqui dentro -->
+    <div class="pix-chave-container">
+      Chave PIX: celular ou email aqui
     </div>
 
-    <div class="discreet-note">
-      <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic;">Observação discreta:</span><br>
-      Caso prefira nos presentear fisicamente, criamos uma lista alternativa com itens para o nosso dia a dia em casa:
-    </div>
-
-    <div class="gifts-list">
-      Copos, Jogo de Jantar, Cobertores, Edredom, Almofadas, Travesseiros e Toalhas de Banho.
-    </div>
-
-    <div class="gifts-colors">
-      Cores de preferência: Cinza, Preto e Bege
+    <!-- Observação discreta para presentes físicos -->
+    <div class="observacao-discreta">
+      <h3 class="obs-titulo">Lista de Presentes</h3>
+      <p class="obs-texto">Caso prefira nos presentear fisicamente, separamos algumas opções simples de coisas do dia a dia para nossa casa:</p>
+      <div class="lista-itens">
+        Copos • Jogo de Jantar • Cobertores • Edredom • Toalhas • Almofadas • Travesseiros • Toalha de Banho
+      </div>
+      <div class="preferencia-cores">
+        Cores de preferência: cinza, preto e bege
+      </div>
     </div>
   </section>
 
   <footer>
-    21 · Novembro · 2026
+    21 de Novembro de 2026
   </footer>
 </div>
 
