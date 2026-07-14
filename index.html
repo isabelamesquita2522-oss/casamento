@@ -61,7 +61,7 @@
   .bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
   .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 
-  /* Elementos de Flores Brancas em Vetor (Carga garantida 100%) */
+  /* Elementos de Flores Brancas em Vetor */
   .floral-vector {
     display: block;
     margin: 0 auto;
@@ -157,6 +157,25 @@
     margin-bottom: 2px;
   }
 
+  /* Destaque Música ao Vivo */
+  .musica-ao-vivo {
+    background-color: rgba(163, 130, 95, 0.1);
+    border: 1px solid var(--gold-accent);
+    padding: 15px;
+    border-radius: 4px;
+    margin: 25px 0;
+    font-size: 1.15rem;
+  }
+
+  .musica-titulo {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-sepia);
+    margin-bottom: 4px;
+  }
+
   /* Observação do Local */
   .local-obs-box {
     background-color: rgba(255, 255, 255, 0.5);
@@ -199,6 +218,13 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: var(--text-sepia);
+    color: #fff;
   }
 
   /* CARDÁPIO */
@@ -254,6 +280,10 @@
     margin-bottom: 15px;
   }
 
+  .pix-wrapper {
+    margin: 15px 0 25px 0;
+  }
+
   .pix-box {
     background-color: var(--bg-cream);
     padding: 12px 20px;
@@ -262,7 +292,30 @@
     font-size: 1.2rem;
     font-weight: 600;
     display: inline-block;
-    margin: 15px 0 25px 0;
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+  }
+
+  .btn-copiar {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    background-color: var(--text-sepia);
+    color: #fff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 10px 20px;
+    border-radius: 0 0 4px 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-copiar:hover {
+    background-color: var(--gold-accent);
   }
 
   .obs-discreta {
@@ -322,21 +375,17 @@
 
 <div class="container">
   
-  <!-- FLORES BRANCAS EM CÓDIGO PURO (Nunca mais somem ou dão erro) -->
+  <!-- FLORES BRANCAS EM CÓDIGO PURO -->
   <svg class="floral-vector" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
     <path d="M20 50 C 35 30, 65 30, 80 50" stroke="#a3825f" stroke-width="1.2" fill="none"/>
     <path d="M10 45 C 25 20, 75 20, 90 45" stroke="#a3825f" stroke-width="0.8" fill="none" stroke-dasharray="2,2"/>
-    <!-- Flor Central -->
     <circle cx="50" cy="32" r="10" fill="#ffffff" stroke="#4a3221" stroke-width="1"/>
     <circle cx="50" cy="32" r="7" fill="#fffcf7" stroke="#a3825f" stroke-width="0.5"/>
     <circle cx="50" cy="32" r="2.5" fill="#e8dfd1"/>
-    <!-- Flor Esquerda -->
     <circle cx="32" cy="40" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
     <circle cx="32" cy="40" r="1.5" fill="#e8dfd1"/>
-    <!-- Flor Direita -->
     <circle cx="68" cy="40" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
     <circle cx="68" cy="40" r="1.5" fill="#e8dfd1"/>
-    <!-- Folhinhas -->
     <path d="M42 22 Q 46 16 50 22 Q 46 28 42 22 Z" fill="#a3825f" opacity="0.6"/>
     <path d="M58 22 Q 54 16 50 22 Q 54 28 58 22 Z" fill="#a3825f" opacity="0.6"/>
   </svg>
@@ -367,8 +416,8 @@
     <div class="detail-item">
       <div class="detail-icon">🕐</div>
       <div class="detail-title">Horário</div>
-      <strong>ÀS 14H</strong>
-      <span>Almoço</span>
+      <strong>DAS 14H00 ÀS 20H00</strong>
+      <span>Almoço &amp; Recepção</span>
     </div>
     <div class="detail-item">
       <div class="detail-icon">📍</div>
@@ -384,18 +433,24 @@
     </div>
   </div>
 
+  <!-- CAMPO MÚSICA AO VIVO -->
+  <div class="musica-ao-vivo">
+    <div class="musica-titulo">🎵 Teremos Música ao Vivo</div>
+    <strong>Renan Castro — MPB</strong>
+  </div>
+
   <!-- CAMPO DE OBSERVAÇÃO SOBRE O CONDOMÍNIO -->
   <div class="local-obs-box">
     <div class="local-obs-titulo">⚠️ Observação Importante sobre o Local</div>
     <p>O endereço fornecido fica dentro de um condomínio. A recepção será realizada no <strong>salão de festas do prédio residencial</strong>.</p>
-    <p style="margin-top: 8px; font-size: 0.95rem; font-style: italic;">Em caso de dúvidas ou dificuldades na portaria, entre em contato direto conosco pelo WhatsApp:</p>
+    <p style="margin-top: 10px; font-size: 0.95rem; font-style: italic;">Em caso de dúvidas ou dificuldades na portaria, fale conosco no WhatsApp:</p>
     <div class="whatsapp-container">
-      <a href="https://wa.me/5511961808843" target="_blank" class="btn-whatsapp">💬 Falar com Isa</a>
+      <a href="https://wa.me/5511969939036" target="_blank" class="btn-whatsapp">💬 Falar com Isa</a>
       <a href="https://wa.me/5511961808843" target="_blank" class="btn-whatsapp">💬 Falar com Allan</a>
     </div>
   </div>
 
-  <!-- CARDÁPIO COMPLETO ATUALIZADO -->
+  <!-- CARDÁPIO COMPLETO -->
   <section class="cardapio-section">
     <h2 class="cardapio-titulo">Cardápio</h2>
     
@@ -436,13 +491,14 @@
     </div>
   </section>
 
-  <!-- LISTA DE PRESENTES E PIX -->
+  <!-- LISTA DE PRESENTES E PIX COPIA E COLA -->
   <section class="presentes-section">
     <h2 class="presentes-titulo">Para nos presentear</h2>
     <p>Caso queira nos apoiar nessa nova etapa, nossa preferência é por PIX:</p>
     
-    <div class="pix-box">
-      PIX: 11961808843
+    <div class="pix-wrapper">
+      <div class="pix-box" id="pixKey">11961808843</div>
+      <button class="btn-copiar" onclick="copiarPix()">Copiar Chave PIX</button>
     </div>
 
     <div class="obs-discreta">
@@ -474,6 +530,25 @@
   </svg>
 
 </div>
+
+<!-- Função JavaScript para copiar a chave PIX de forma simples e rápida -->
+<script>
+function copiarPix() {
+  const pixKeyText = document.getElementById("pixKey").innerText;
+  navigator.clipboard.writeText(pixKeyText).then(() => {
+    alert("Chave PIX copiada com sucesso! 👍");
+  }).catch(err => {
+    // Caso de contingência para navegadores mais antigos
+    const input = document.createElement("input");
+    input.value = pixKeyText;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    alert("Chave PIX copiada com sucesso! 👍");
+  });
+}
+</script>
 
 </body>
 </html>
