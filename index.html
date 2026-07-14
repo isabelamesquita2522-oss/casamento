@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allan &amp; Isabela — Nosso Casamento</title>
+<title>Allan &amp; Isabela — Recepção de Casamento</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Fontes: Cursiva elegante do convite + Fontes clássicas de alta legibilidade para o menu -->
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Fontes idênticas ao estilo do convite -->
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-convite: #f7f4ee; /* O tom creme exato do fundo do seu convite */
-    --marrom-escuro: #2b1a0f; /* Contraste máximo para leitura perfeita */
-    --verde-folha: #5a6b5c; /* Tom dos galhos das flores brancas */
-    --ouro-velho: #a38245;
+    --bg-cream: #f4ece1; /* Fundo creme quente idêntico ao convite */
+    --text-sepia: #4a3221; /* Marrom escuro do texto */
+    --gold-accent: #a3825f; /* Detalhes e arabescos */
+    --white-rose: #ffffff;
   }
 
   * {
@@ -23,298 +23,433 @@
   }
 
   body {
-    background-color: var(--bg-convite);
-    color: var(--marrom-escuro);
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
+    background-color: var(--bg-cream);
+    color: var(--text-sepia);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
     position: relative;
     min-height: 100vh;
+    padding: 20px;
   }
 
-  /* Fotos de fundo aplicadas de forma ultra-suave e poética (esboço que faz brilhar os olhos) */
-  .backdrop-overlay {
+  /* Moldura clássica com cantos desenhados igual ao convite */
+  .wedding-frame {
+    position: fixed;
+    inset: 15px;
+    border: 2px solid var(--text-sepia);
+    pointer-events: none;
+    z-index: 99;
+  }
+  .wedding-frame::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid var(--gold-accent);
+    opacity: 0.6;
+  }
+
+  /* Cantos decorados da moldura */
+  .frame-corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--text-sepia);
+    z-index: 100;
+  }
+  .top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+  .top-right { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+  .bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+  .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+  /* Flores elegantes e realistas nos cantos (idênticas ao convite) */
+  .floral-corner-top {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 250px;
+    height: auto;
+    z-index: 5;
+    opacity: 0.9;
+    pointer-events: none;
+  }
+  .floral-corner-bottom {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 250px;
+    height: auto;
+    z-index: 5;
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  /* Fotos de fundo aplicadas com extrema suavidade e transição (brilhar os olhos) */
+  .photo-backdrop {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Substitua o link abaixo pela URL da sua foto favorita do casal */
-    background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000'); 
+    /* Sua foto de casal entra aqui */
+    background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000');
     background-size: cover;
     background-position: center;
-    opacity: 0.04; /* Apenas um sussurro da imagem para não atrapalhar a leitura */
+    opacity: 0.03; /* Super suave e delicado, agindo como um esboço romântico */
     pointer-events: none;
     z-index: 1;
-  }
-
-  /* Ilustração Floral Superior (Flores Brancas e galhos verdes do convite) */
-  .floral-header {
-    width: 100%;
-    height: 180px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" fill="none"><path d="M100 20 C150 50, 200 10, 300 60 C400 110, 450 40, 500 80" stroke="%235a6b5c" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="300" cy="60" r="15" fill="%23ffffff" stroke="%235a6b5c" stroke-width="1"/><circle cx="300" cy="60" r="4" fill="%23e8d8b8"/><circle cx="450" cy="40" r="10" fill="%23ffffff" stroke="%235a6b5c" stroke-width="1"/><path d="M900 20 C850 50, 800 10, 700 60 C600 110, 550 40, 500 80" stroke="%235a6b5c" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="700" cy="60" r="15" fill="%23ffffff" stroke="%235a6b5c" stroke-width="1"/><circle cx="700" cy="60" r="4" fill="%23e8d8b8"/></svg>');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
   }
 
   .container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 120px 24px 80px 24px;
+    padding: 60px 20px;
     position: relative;
     z-index: 10;
     text-align: center;
   }
 
-  /* Caligrafia idêntica ao convite */
-  .nomes-noivos {
-    font-family: 'Alex Brush', cursive;
-    font-size: clamp(3.5rem, 12vw, 5rem);
-    color: var(--marrom-escuro);
-    margin-bottom: 5px;
-    font-weight: 400;
-  }
-
-  .subtitulo {
-    font-size: 0.8rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--verde-folha);
-    font-weight: 600;
-    margin-bottom: 40px;
-  }
-
-  /* Frase sem quebras, inteira e linear */
-  .frase-convite {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.35rem;
-    color: var(--marrom-escuro);
-    margin: 30px 0;
-    white-space: nowrap; /* Garante que a frase fique inteira na mesma linha */
-    overflow-x: auto; /* Evita quebra caso a tela do celular seja muito pequena */
-    padding-bottom: 5px;
-  }
-
-  .divider {
-    width: 80px;
-    height: 1px;
-    background-color: var(--ouro-velho);
-    margin: 40px auto;
-    opacity: 0.5;
-  }
-
-  /* CARDÁPIO REFORMULADO: Elegante, vertical e de leitura limpa */
-  .cardapio-box {
-    margin: 50px 0;
-    padding: 20px 10px;
-  }
-
-  .cardapio-titulo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--marrom-escuro);
-    margin-bottom: 40px;
+  /* Monograma AJ */
+  .monogram {
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    border: 1.5px solid var(--text-sepia);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
   }
-  .cardapio-titulo::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background-color: var(--verde-folha);
-    margin: 10px auto 0;
+  .monogram-text {
+    font-family: 'Alex Brush', cursive;
+    font-size: 3rem;
+    line-height: 1;
+    margin-top: -5px;
+  }
+  .monogram-leaves {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    border: 1px dashed var(--gold-accent);
+    border-radius: 50%;
+    opacity: 0.4;
   }
 
-  .cardapio-secao {
+  /* Nomes dos Noivos na caligrafia perfeita */
+  .nomes-noivos {
+    font-family: 'Alex Brush', cursive;
+    font-size: clamp(3.8rem, 12vw, 5.2rem);
+    color: var(--text-sepia);
+    font-weight: 400;
+    margin: 25px 0 10px 0;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+  }
+
+  .convite-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-sepia);
+    font-weight: 600;
     margin-bottom: 35px;
   }
 
-  .secao-titulo {
+  /* Frase do convite inteira e bem marcada */
+  .frase-completa {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--text-sepia);
+    margin: 30px auto;
+    max-width: 90%;
+    font-weight: 500;
+  }
+
+  /* Detalhes do Evento (Grid Organizado com Ícones) */
+  .event-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 40px 0;
+    border-top: 1px solid rgba(74, 50, 33, 0.2);
+    border-bottom: 1px solid rgba(74, 50, 33, 0.2);
+    padding: 30px 0;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.05rem;
+  }
+
+  .detail-icon {
+    font-size: 1.8rem;
+    color: var(--gold-accent);
+    margin-bottom: 8px;
+  }
+
+  .detail-title {
+    font-weight: 600;
+    text-transform: uppercase;
     font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  /* Seção de Cardápio Sofisticado */
+  .cardapio-section {
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(74, 50, 33, 0.15);
+    border-radius: 4px;
+    padding: 40px 30px;
+    margin: 50px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+
+  .cardapio-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--verde-folha);
-    font-weight: 600;
-    margin-bottom: 10px;
+    color: var(--text-sepia);
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(74, 50, 33, 0.2);
+    padding-bottom: 10px;
   }
 
-  .prato-nome {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--marrom-escuro);
-  }
-
-  .prato-detalhe {
-    font-size: 0.95rem;
-    color: #55443a;
-    font-style: italic;
-    margin-top: 2px;
-  }
-
-  /* SEÇÃO DE PRESENTES E PIX BASTANTE DESTACADO */
-  .presentes-box {
-    background-color: #ffffff;
-    border: 1px solid rgba(163, 130, 69, 0.2);
-    border-radius: 8px;
-    padding: 40px 30px;
-    margin-top: 60px;
-    box-shadow: 0 10px 30px rgba(43, 26, 15, 0.03);
-  }
-
-  .pix-titulo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--marrom-escuro);
-    margin-bottom: 10px;
-  }
-
-  .pix-descricao {
-    font-size: 0.95rem;
-    color: #55443a;
+  .menu-group {
     margin-bottom: 25px;
   }
 
-  /* Chave pix super visível e fácil de copiar */
-  .pix-chave-container {
-    background-color: var(--bg-convite);
-    border: 2px dashed var(--ouro-velho);
-    padding: 15px;
-    border-radius: 6px;
+  .menu-group-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-accent);
     font-weight: 600;
-    font-size: 1.2rem;
-    color: var(--marrom-escuro);
-    letter-spacing: 0.05em;
-    display: inline-block;
-    margin-bottom: 30px;
+    margin-bottom: 8px;
   }
 
-  /* Observação discreta e elegante */
-  .observacao-discreta {
-    border-top: 1px solid #f0eae1;
-    padding-top: 25px;
-    margin-top: 20px;
-    text-align: left;
+  .menu-item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--text-sepia);
   }
 
-  .obs-titulo {
-    font-family: 'Playfair Display', serif;
+  .menu-item-desc {
+    font-size: 0.95rem;
     font-style: italic;
-    font-size: 1.1rem;
-    color: var(--verde-folha);
-    margin-bottom: 10px;
-    text-align: center;
+    color: #5c4636;
   }
 
-  .obs-texto {
-    font-size: 0.9rem;
-    color: #66554a;
-    line-height: 1.6;
-    text-align: center;
+  /* Seção de Presentes e PIX em Grande Destaque */
+  .presentes-section {
+    border: 2px dashed var(--text-sepia);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    padding: 40px 25px;
+    margin-top: 50px;
+  }
+
+  .presentes-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
     margin-bottom: 15px;
   }
 
-  .lista-itens {
-    font-size: 0.95rem;
-    color: var(--marrom-escuro);
-    font-weight: 500;
-    text-align: center;
-    line-height: 1.7;
+  /* Chave PIX super fácil de ler e destacada */
+  .pix-box {
+    background-color: var(--bg-cream);
+    padding: 15px;
+    border: 1px solid var(--text-sepia);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin: 15px 0 25px 0;
+    color: var(--text-sepia);
   }
 
-  .preferencia-cores {
+  .obs-discreta {
+    border-top: 1px dashed rgba(74, 50, 33, 0.2);
+    padding-top: 25px;
+    margin-top: 20px;
+  }
+
+  .obs-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .obs-lista {
+    font-size: 1rem;
+    color: #5c4636;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .cores-preferidas {
     margin-top: 15px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--verde-folha);
+    color: var(--gold-accent);
     font-weight: 600;
-    text-align: center;
   }
 
-  footer {
-    margin-top: 80px;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    color: var(--verde-folha);
-    text-transform: uppercase;
+  /* Rodapé Fofo: Pais do Fredy */
+  .footer-love {
+    margin-top: 50px;
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  .pais-do-fredy {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2.2rem;
+    color: var(--text-sepia);
+    margin-top: 10px;
+  }
+
+  /* Responsividade para celulares */
+  @media (max-width: 600px) {
+    .container {
+      padding: 40px 15px;
+    }
+    .nomes-noivos {
+      font-size: 3.5rem;
+    }
+    .event-details {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
   }
 </style>
 </head>
 <body>
 
-<div class="backdrop-overlay"></div>
-<div class="floral-header"></div>
+<div class="photo-backdrop"></div>
+<div class="wedding-frame">
+  <div class="frame-corner top-left"></div>
+  <div class="frame-corner top-right"></div>
+  <div class="frame-corner bottom-left"></div>
+  <div class="frame-corner bottom-right"></div>
+</div>
+
+<!-- Rosas e arranjos idênticos aos do convite nos cantos -->
+<img src="https://i.ibb.co/LkhbY9G/floral-top.png" class="floral-corner-top" alt="" onerror="this.style.display='none'">
+<img src="https://i.ibb.co/MkpCg7B/floral-bottom.png" class="floral-corner-bottom" alt="" onerror="this.style.display='none'">
 
 <div class="container">
   
-  <!-- Cabeçalho com os nomes na fonte elegante -->
-  <h1 class="nomes-noivos">Allan &amp; Isabela</h1>
-  <div class="subtitulo">Convidam para sua recepção</div>
-
-  <!-- Frase do convite inteira, linear e sem quebra -->
-  <div class="frase-convite">
-    "Do caos da vida, escolhemos um ao outro."
+  <!-- Monograma elegante AJ com Ramos -->
+  <div class="monogram">
+    <div class="monogram-text">AJ</div>
+    <div class="monogram-leaves"></div>
   </div>
 
-  <div class="divider"></div>
+  <h1 class="nomes-noivos">Allan &amp; Isabela</h1>
+  <div class="convite-texto">Convidam para sua recepção pós casamento civil</div>
 
-  <!-- CARDÁPIO VERTICAL, LIMPO E SOFISTICADO -->
-  <section class="cardapio-box">
-    <h2 class="cardapio-titulo">Cardápio</h2>
+  <!-- Frase inteira do convite com formatação impecável -->
+  <p class="frase-completa">
+    "Do caos da vida, escolhemos um ao outro.<br>
+    Nos fortalecemos, nos transformamos<br>
+    e nos tornamos lar."
+  </p>
 
-    <div class="cardapio-secao">
-      <h3 class="secao-titulo">Entradas</h3>
-      <div class="prato-nome">Canapés Finos &amp; Salgados Assados</div>
-      <div class="prato-detalhe">Seleção leve e crocante para iniciar a noite.</div>
+  <!-- Detalhes do casamento idênticos aos ícones do convite -->
+  <div class="event-details">
+    <div class="detail-item">
+      <div class="detail-icon">📅</div>
+      <div class="detail-title">Data</div>
+      <strong>21 NOVEMBRO 2026</strong>
+      <span>Sábado</span>
+    </div>
+    <div class="detail-item">
+      <div class="detail-icon">🕐</div>
+      <div class="detail-title">Horário</div>
+      <strong>ÀS 14H</strong>
+      <span>Almoço</span>
+    </div>
+    <div class="detail-item">
+      <div class="detail-icon">📍</div>
+      <div class="detail-title">Local</div>
+      <strong>Rua Fábio dos Santos Luz, 161</strong>
+      <span>Panamby – Morumbi</span>
+    </div>
+    <div class="detail-item">
+      <div class="detail-icon">🧥</div>
+      <div class="detail-title">Traje</div>
+      <strong>Traje Confortável</strong>
+      <span>(Social Leve)</span>
+    </div>
+  </div>
+
+  <!-- CARDÁPIO VERTICAL E ELEGANTE -->
+  <section class="cardapio-section">
+    <h2 class="cardapio-titulo">Cardápio do Almoço</h2>
+    
+    <div class="menu-group">
+      <div class="menu-group-title">Entradas</div>
+      <div class="menu-item-name">Canapés &amp; Salgados Finos</div>
+      <div class="menu-item-desc">Uma seleção leve e artesanal servida logo na chegada.</div>
     </div>
 
-    <div class="cardapio-secao">
-      <h3 class="secao-titulo">Prato Principal</h3>
-      <div class="prato-nome">Massa Artesanal ao Molho Quatro Queijos</div>
-      <div class="prato-detalhe">Acompanhada de filé mignon grelhado ao molho madeira.</div>
+    <div class="menu-group">
+      <div class="menu-group-title">Prato Principal</div>
+      <div class="menu-item-name">Massa Artesanal e Grelhados</div>
+      <div class="menu-item-desc">Ravioli ao molho quatro queijos acompanhado de filet mignon ao molho madeira.</div>
     </div>
 
-    <div class="cardapio-secao">
-      <h3 class="secao-titulo">Bebidas</h3>
-      <div class="prato-nome">Drinks, Vinhos, Sucos &amp; Refrigerantes</div>
-      <div class="prato-detalhe">Bar de coquetéis aberto durante todo o evento.</div>
+    <div class="menu-group">
+      <div class="menu-group-title">Bebidas</div>
+      <div class="menu-item-name">Drinks, Sucos &amp; Cerveja</div>
+      <div class="menu-item-desc">Bar completo de coquetéis à disposição dos convidados.</div>
     </div>
   </section>
 
-  <!-- SEÇÃO DE PRESENTES E PIX DESTACADO -->
-  <section class="presentes-box">
-    <h2 class="pix-title">Presente dos Noivos</h2>
-    <p class="pix-descricao">Nossa maior alegria é compartilhar este dia com você. Caso queira nos presentear, nossa preferência é por meio de PIX:</p>
+  <!-- PRESENTES E PIX DESTACADOS -->
+  <section class="presentes-section">
+    <h2 class="presentes-titulo">Para nos presentear</h2>
+    <p>Sua presença é o nosso maior presente! Se desejar nos apoiar nessa nova jornada, nossa preferência é por PIX:</p>
     
-    <!-- Cole sua chave pix real aqui dentro -->
-    <div class="pix-chave-container">
-      Chave PIX: celular ou email aqui
+    <div class="pix-box">
+      CHAVE PIX: 11961808843
     </div>
 
-    <!-- Observação discreta para presentes físicos -->
-    <div class="observacao-discreta">
-      <h3 class="obs-titulo">Lista de Presentes</h3>
-      <p class="obs-texto">Caso prefira nos presentear fisicamente, separamos algumas opções simples de coisas do dia a dia para nossa casa:</p>
-      <div class="lista-itens">
-        Copos • Jogo de Jantar • Cobertores • Edredom • Toalhas • Almofadas • Travesseiros • Toalha de Banho
-      </div>
-      <div class="preferencia-cores">
+    <div class="obs-discreta">
+      <h3 class="obs-titulo">Observação Discreta</h3>
+      <p class="obs-lista">
+        Caso prefira nos presentear de forma física, organizamos uma listinha com itens simples do dia a dia para nossa casa:<br>
+        <strong>Copos, jogo de jantar, cobertores, edredom, toalha, almofadas, travesseiros e toalha de banho.</strong>
+      </p>
+      <div class="cores-preferidas">
         Cores de preferência: cinza, preto e bege
       </div>
     </div>
   </section>
 
-  <footer>
-    21 de Novembro de 2026
-  </footer>
+  <!-- Rodapé Personalizado Pais do Fredy -->
+  <div class="footer-love">
+    Estamos ansiosos para esse dia, podem imaginar...<br>
+    Vamos celebrar nosso amor.
+    <div class="pais-do-fredy">Pais do Fredy 🐾🐾</div>
+  </div>
+
 </div>
 
 </body>
