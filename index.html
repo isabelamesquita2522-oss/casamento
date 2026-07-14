@@ -61,36 +61,16 @@
   .bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
   .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 
-  /* Fundo sutil e romântico com a FOTO DO CASAL */
-  .photo-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://i.ibb.co/6R2nBsy/casal-holambra.jpg');
-    background-size: cover;
-    background-position: center 30%;
-    opacity: 0.07; /* Mantém o rosto discreto e poético */
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* IMAGENS DE FLORES BRANCAS E RAMOS REAIS */
-  .floral-top {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto dsb;
+  /* Elementos de Flores Brancas em Vetor (Carga garantida 100%) */
+  .floral-vector {
     display: block;
-    opacity: 0.9;
+    margin: 0 auto;
+    width: 160px;
+    height: auto;
+    opacity: 0.85;
   }
-
   .floral-bottom {
-    width: 100%;
-    max-width: 280px;
-    margin: 30px auto 0 auto;
-    display: block;
-    opacity: 0.9;
+    margin-top: 40px;
   }
 
   .container {
@@ -104,7 +84,7 @@
 
   /* Monograma AJ */
   .monogram {
-    margin: 15px auto;
+    margin: 20px auto;
     width: 85px;
     height: 85px;
     border: 1.5px solid var(--text-sepia);
@@ -177,9 +157,9 @@
     margin-bottom: 2px;
   }
 
-  /* Bloco de Observação Importante do Local */
+  /* Observação do Local */
   .local-obs-box {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
     border: 1px dashed var(--gold-accent);
     padding: 20px;
     border-radius: 4px;
@@ -221,7 +201,7 @@
     gap: 5px;
   }
 
-  /* CARDÁPIO SOFISTICADO */
+  /* CARDÁPIO */
   .cardapio-section {
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(74, 50, 33, 0.15);
@@ -312,7 +292,7 @@
     font-weight: 600;
   }
 
-  /* Rodapé Pais do Fredy */
+  /* Rodapé */
   .footer-love {
     margin-top: 45px;
     font-size: 1.1rem;
@@ -333,7 +313,6 @@
 </head>
 <body>
 
-<div class="photo-backdrop"></div>
 <div class="wedding-frame">
   <div class="frame-corner top-left"></div>
   <div class="frame-corner top-right"></div>
@@ -343,8 +322,24 @@
 
 <div class="container">
   
-  <!-- RAMOS DE FLORES BRANCAS REAIS E DELICADAS NO TOPO -->
-  <img src="https://i.ibb.co/30mHqWk/flowers-top-cream.png" alt="Flores Brancas" class="floral-top">
+  <!-- FLORES BRANCAS EM CÓDIGO PURO (Nunca mais somem ou dão erro) -->
+  <svg class="floral-vector" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 50 C 35 30, 65 30, 80 50" stroke="#a3825f" stroke-width="1.2" fill="none"/>
+    <path d="M10 45 C 25 20, 75 20, 90 45" stroke="#a3825f" stroke-width="0.8" fill="none" stroke-dasharray="2,2"/>
+    <!-- Flor Central -->
+    <circle cx="50" cy="32" r="10" fill="#ffffff" stroke="#4a3221" stroke-width="1"/>
+    <circle cx="50" cy="32" r="7" fill="#fffcf7" stroke="#a3825f" stroke-width="0.5"/>
+    <circle cx="50" cy="32" r="2.5" fill="#e8dfd1"/>
+    <!-- Flor Esquerda -->
+    <circle cx="32" cy="40" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
+    <circle cx="32" cy="40" r="1.5" fill="#e8dfd1"/>
+    <!-- Flor Direita -->
+    <circle cx="68" cy="40" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
+    <circle cx="68" cy="40" r="1.5" fill="#e8dfd1"/>
+    <!-- Folhinhas -->
+    <path d="M42 22 Q 46 16 50 22 Q 46 28 42 22 Z" fill="#a3825f" opacity="0.6"/>
+    <path d="M58 22 Q 54 16 50 22 Q 54 28 58 22 Z" fill="#a3825f" opacity="0.6"/>
+  </svg>
 
   <!-- Monograma AJ -->
   <div class="monogram">
@@ -395,9 +390,8 @@
     <p>O endereço fornecido fica dentro de um condomínio. A recepção será realizada no <strong>salão de festas do prédio residencial</strong>.</p>
     <p style="margin-top: 8px; font-size: 0.95rem; font-style: italic;">Em caso de dúvidas ou dificuldades na portaria, entre em contato direto conosco pelo WhatsApp:</p>
     <div class="whatsapp-container">
-      <!-- Substitua o número abaixo pelo link do whatsapp real se desejar (ex: https://wa.me/5511999999999) -->
-      <a href="#" class="btn-whatsapp">💬 Falar com Isa</a>
-      <a href="#" class="btn-whatsapp">💬 Falar com Allan</a>
+      <a href="https://wa.me/5511961808843" target="_blank" class="btn-whatsapp">💬 Falar com Isa</a>
+      <a href="https://wa.me/5511961808843" target="_blank" class="btn-whatsapp">💬 Falar com Allan</a>
     </div>
   </div>
 
@@ -457,7 +451,7 @@
         Copos • Jogo de Jantar • Cobertores • Edredom • Toalha • Almofadas • Travesseiros • Toalha de Banho
       </div>
       <div class="cores-preferidas">
-        Cores preferenciais: cinza, preto e beige
+        Cores preferenciais: cinza, preto e bege
       </div>
     </div>
   </section>
@@ -469,8 +463,15 @@
     <div class="pais-do-fredy">Pais do Fredy 🐾</div>
   </div>
 
-  <!-- POUCAS FLORES NO RODAPÉ TAMBÉM PARA COMPLETAR O DESIGN -->
-  <img src="https://i.ibb.co/qYBmP7c/flowers-bottom-cream.png" alt="Flores Brancas" class="floral-bottom">
+  <!-- FLORES BRANCAS NO RODAPÉ -->
+  <svg class="floral-vector floral-bottom" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 10 C 35 30, 65 30, 80 10" stroke="#a3825f" stroke-width="1.2" fill="none"/>
+    <circle cx="50" cy="28" r="10" fill="#ffffff" stroke="#4a3221" stroke-width="1"/>
+    <circle cx="50" cy="28" r="7" fill="#fffcf7" stroke="#a3825f" stroke-width="0.5"/>
+    <circle cx="50" cy="28" r="2.5" fill="#e8dfd1"/>
+    <circle cx="32" cy="20" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
+    <circle cx="68" cy="20" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
+  </svg>
 
 </div>
 
