@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allan &amp; Isabela — Recepção de Casamento</title>
+<title>isabellallan2111</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Fontes elegantes do convite -->
@@ -61,22 +61,10 @@
   .bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
   .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 
-  /* Elementos de Flores Brancas em Vetor */
-  .floral-vector {
-    display: block;
-    margin: 0 auto;
-    width: 160px;
-    height: auto;
-    opacity: 0.85;
-  }
-  .floral-bottom {
-    margin-top: 40px;
-  }
-
   .container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px 20px 60px 20px;
+    padding: 40px 20px 60px 20px;
     position: relative;
     z-index: 10;
     text-align: center;
@@ -375,21 +363,6 @@
 
 <div class="container">
   
-  <!-- FLORES BRANCAS EM CÓDIGO PURO -->
-  <svg class="floral-vector" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 50 C 35 30, 65 30, 80 50" stroke="#a3825f" stroke-width="1.2" fill="none"/>
-    <path d="M10 45 C 25 20, 75 20, 90 45" stroke="#a3825f" stroke-width="0.8" fill="none" stroke-dasharray="2,2"/>
-    <circle cx="50" cy="32" r="10" fill="#ffffff" stroke="#4a3221" stroke-width="1"/>
-    <circle cx="50" cy="32" r="7" fill="#fffcf7" stroke="#a3825f" stroke-width="0.5"/>
-    <circle cx="50" cy="32" r="2.5" fill="#e8dfd1"/>
-    <circle cx="32" cy="40" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
-    <circle cx="32" cy="40" r="1.5" fill="#e8dfd1"/>
-    <circle cx="68" cy="40" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
-    <circle cx="68" cy="40" r="1.5" fill="#e8dfd1"/>
-    <path d="M42 22 Q 46 16 50 22 Q 46 28 42 22 Z" fill="#a3825f" opacity="0.6"/>
-    <path d="M58 22 Q 54 16 50 22 Q 54 28 58 22 Z" fill="#a3825f" opacity="0.6"/>
-  </svg>
-
   <!-- Monograma AJ -->
   <div class="monogram">
     <div class="monogram-text">AJ</div>
@@ -398,14 +371,14 @@
   <h1 class="nomes-noivos">Allan &amp; Isabela</h1>
   <div class="convite-texto">Convidam para sua recepção pós casamento civil</div>
 
-  <!-- Frase perfeita do convite -->
+  <!-- Frase do convite -->
   <p class="frase-completa">
     "Do caos da vida, escolhemos um ao outro.<br>
     Nos fortalecemos, nos transformamos<br>
     e nos tornamos lar."
   </p>
 
-  <!-- Detalhes reais -->
+  <!-- Detalhes -->
   <div class="event-details">
     <div class="detail-item">
       <div class="detail-icon">📅</div>
@@ -512,33 +485,22 @@
     </div>
   </section>
 
-  <!-- Rodapé Pais do Fredy -->
+  <!-- Rodapé -->
   <div class="footer-love">
     Estamos ansiosos para esse dia, podem imaginar...<br>
     Vamos celebrar nosso amor.
     <div class="pais-do-fredy">Pais do Fredy 🐾</div>
   </div>
 
-  <!-- FLORES BRANCAS NO RODAPÉ -->
-  <svg class="floral-vector floral-bottom" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 10 C 35 30, 65 30, 80 10" stroke="#a3825f" stroke-width="1.2" fill="none"/>
-    <circle cx="50" cy="28" r="10" fill="#ffffff" stroke="#4a3221" stroke-width="1"/>
-    <circle cx="50" cy="28" r="7" fill="#fffcf7" stroke="#a3825f" stroke-width="0.5"/>
-    <circle cx="50" cy="28" r="2.5" fill="#e8dfd1"/>
-    <circle cx="32" cy="20" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
-    <circle cx="68" cy="20" r="7" fill="#ffffff" stroke="#4a3221" stroke-width="0.8"/>
-  </svg>
-
 </div>
 
-<!-- Função JavaScript para copiar a chave PIX de forma simples e rápida -->
+<!-- Função JavaScript para copiar a chave PIX -->
 <script>
 function copiarPix() {
   const pixKeyText = document.getElementById("pixKey").innerText;
   navigator.clipboard.writeText(pixKeyText).then(() => {
     alert("Chave PIX copiada com sucesso! 👍");
   }).catch(err => {
-    // Caso de contingência para navegadores mais antigos
     const input = document.createElement("input");
     input.value = pixKeyText;
     document.body.appendChild(input);
