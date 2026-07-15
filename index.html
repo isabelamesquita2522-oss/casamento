@@ -12,8 +12,9 @@
   :root {
     --bg-cream: #f4ece1; /* Fundo creme do convite */
     --text-sepia: #4a3221; /* Marrom escuro */
-    --gold-accent: #a3825f; /* Detalhes */
+    --gold-accent: #a3825f; /* Detalhes dourados */
     --button-bg: #e6ded3;
+    --text-light: #806854; /* Tom mais claro e suave para descrições */
   }
 
   * {
@@ -96,8 +97,8 @@
   }
 
   .convite-texto {
-    font-size: 0.9rem;
-    letter-spacing: 0.2em;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-sepia);
     font-weight: 600;
@@ -105,7 +106,7 @@
   }
 
   .frase-completa {
-    font-style: italic;
+    font-style: italic; /* Frase em itálico como pedido */
     font-size: 1.3rem;
     line-height: 1.6;
     color: var(--text-sepia);
@@ -131,18 +132,17 @@
     font-size: 1.05rem;
   }
 
-  .detail-icon {
-    font-size: 1.6rem;
-    color: var(--gold-accent);
-    margin-bottom: 5px;
-  }
-
   .detail-title {
     font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8rem;
+    text-transform: uppercase; /* Forçar maiúsculo na palavra principal */
+    font-size: 0.85rem;
     letter-spacing: 0.1em;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    color: var(--text-sepia);
+  }
+
+  .detail-value {
+    font-size: 1.15rem;
   }
 
   /* Destaque Música ao Vivo */
@@ -161,7 +161,6 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--text-sepia);
-    margin-bottom: 4px;
   }
 
   /* Observação do Local */
@@ -237,18 +236,29 @@
     margin-bottom: 22px;
   }
 
+  /* Categoria em Marrom Destacado */
   .menu-group-title {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--gold-accent);
+    color: var(--text-sepia); /* Marrom para categorias */
     font-weight: 600;
     margin-bottom: 4px;
   }
 
+  /* Descrições em tom suave */
   .menu-item-name {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.25rem;
+    color: var(--text-light); /* Cor clara para as descrições */
+  }
+
+  .menu-item-sub {
+    font-size: 1.05rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 3px;
+    color: var(--text-light); /* Cor clara para acompanhamentos */
   }
 
   /* PRESENTES E PIX */
@@ -322,10 +332,11 @@
     font-weight: 600;
     max-width: 90%;
     margin: 0 auto;
+    line-height: 1.6;
   }
 
   .cores-preferidas {
-    margin-top: 12px;
+    margin-top: 15px;
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -368,51 +379,48 @@
     <div class="monogram-text">AJ</div>
   </div>
 
-  <h1 class="nomes-noivos">Allan &amp; Isabela</h1>
-  <div class="convite-texto">Convidam para sua recepção pós casamento civil</div>
+  <!-- Nomes ajustados com o "e" simples e minúsculo -->
+  <h1 class="nomes-noivos">Allan e Isabela</h1>
+  <div class="convite-texto">CONVIDAM: PARA RECEPÇÃO PÓS CASAMENTO CIVIL</div>
 
-  <!-- Frase do convite -->
+  <!-- Frase do convite formatada inteiramente em itálico -->
   <p class="frase-completa">
-    "Do caos da vida, escolhemos um ao outro.<br>
+    <i>"Do caos da vida, escolhemos um ao outro.<br>
     Nos fortalecemos, nos transformamos<br>
-    e nos tornamos lar."
+    e nos tornamos lar."</i>
   </p>
 
-  <!-- Detalhes -->
+  <!-- Detalhes do Evento -->
   <div class="event-details">
     <div class="detail-item">
-      <div class="detail-icon">📅</div>
-      <div class="detail-title">Data</div>
-      <strong>21 NOVEMBRO 2026</strong>
+      <div class="detail-title">📅 DATA</div>
+      <strong class="detail-value">21/11/26</strong>
       <span>Sábado</span>
     </div>
     <div class="detail-item">
-      <div class="detail-icon">🕐</div>
-      <div class="detail-title">Horário</div>
-      <strong>DAS 14H00 ÀS 20H00</strong>
+      <div class="detail-title">🕐 HORÁRIO</div>
+      <strong class="detail-value">Inicio às 14h00 às 20h00</strong>
       <span>Almoço &amp; Recepção</span>
     </div>
     <div class="detail-item">
-      <div class="detail-icon">📍</div>
-      <div class="detail-title">Local</div>
-      <strong>Rua Fábio dos Santos Luz, 161</strong>
+      <div class="detail-title">📍 LOCAL</div>
+      <strong class="detail-value" style="font-size: 1.1rem;">Rua Fábio dos Santos Luz, 161</strong>
       <span>Panamby – Morumbi</span>
     </div>
     <div class="detail-item">
-      <div class="detail-icon">🧥</div>
-      <div class="detail-title">Traje</div>
-      <strong>Traje Confortável</strong>
+      <div class="detail-title">🧥 TRAJE</div>
+      <strong class="detail-value">Traje Confortável</strong>
       <span>(Social Leve)</span>
     </div>
   </div>
 
-  <!-- CAMPO MÚSICA AO VIVO -->
+  <!-- TRILHA SONORA -->
   <div class="musica-ao-vivo">
-    <div class="musica-titulo">🎵 Teremos Música ao Vivo</div>
-    <strong>Renan Castro — MPB</strong>
+    <div class="musica-titulo">🎵 TRILHA SONORA</div>
+    <strong style="font-size: 1.25rem;">RENAN CASTRO MPB - ao vivo</strong>
   </div>
 
-  <!-- CAMPO DE OBSERVAÇÃO SOBRE O CONDOMÍNIO -->
+  <!-- OBSERVAÇÃO SOBRE O CONDOMÍNIO (Intacta, como você amou!) -->
   <div class="local-obs-box">
     <div class="local-obs-titulo">⚠️ Observação Importante sobre o Local</div>
     <p>O endereço fornecido fica dentro de um condomínio. A recepção será realizada no <strong>salão de festas do prédio residencial</strong>.</p>
@@ -423,7 +431,7 @@
     </div>
   </div>
 
-  <!-- CARDÁPIO COMPLETO -->
+  <!-- CARDÁPIO COMPLETO (Cores invertidas como solicitado!) -->
   <section class="cardapio-section">
     <h2 class="cardapio-titulo">Cardápio</h2>
     
@@ -435,7 +443,7 @@
     <div class="menu-group">
       <div class="menu-group-title">Prato Principal</div>
       <div class="menu-item-name">Feijoada Completa</div>
-      <div class="menu-item-name" style="font-size: 1.1rem; font-weight: 400; font-style: italic; margin-top: 3px;">
+      <div class="menu-item-sub">
         Acompanha arroz branco, couve na manteiga, torresmo e bisteca
       </div>
     </div>
@@ -443,7 +451,7 @@
     <div class="menu-group">
       <div class="menu-group-title">Saladas</div>
       <div class="menu-item-name">Salada de Alface &amp; Salada Caesar</div>
-      <div class="menu-item-name" style="font-size: 1.1rem; font-weight: 400; font-style: italic; margin-top: 3px;">
+      <div class="menu-item-sub">
         Acompanha frutas da estação
       </div>
     </div>
@@ -464,7 +472,7 @@
     </div>
   </section>
 
-  <!-- LISTA DE PRESENTES E PIX COPIA E COLA -->
+  <!-- LISTA DE PRESENTES, PIX E SHOPEE -->
   <section class="presentes-section">
     <h2 class="presentes-titulo">Para nos presentear</h2>
     <p>Caso queira nos apoiar nessa nova etapa, nossa preferência é por PIX:</p>
@@ -477,7 +485,7 @@
     <div class="obs-discreta">
       <p class="obs-texto">Caso prefira, ao invés de pix, preparamos algumas opções de presente que ainda não temos:</p>
       <div class="lista-itens">
-        Copos • Jogo de Jantar • Cobertores • Edredom • Toalha • Almofadas • Travesseiros • Toalha de Banho
+        Copos • Jogo de Jantar • Cobertores • Edredom • Toalha • Almofadas • Travesseiros • Toalha de Banho • Itens de casa (ou o que a Shopee tocar no coração de vocês) 🛍️
       </div>
       <div class="cores-preferidas">
         Cores preferenciais: cinza, preto e bege
