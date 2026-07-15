@@ -14,7 +14,7 @@
     --text-sepia: #4a3221; /* Marrom escuro */
     --gold-accent: #a3825f; /* Detalhes dourados */
     --button-bg: #e6ded3;
-    --text-light: #806854; /* Tom mais claro e suave para descrições */
+    --text-light: #806854; /* Tom mais claro e suave para as descrições em itálico */
   }
 
   * {
@@ -106,7 +106,7 @@
   }
 
   .frase-completa {
-    font-style: italic; /* Frase em itálico como pedido */
+    font-style: italic;
     font-size: 1.3rem;
     line-height: 1.6;
     color: var(--text-sepia);
@@ -134,7 +134,7 @@
 
   .detail-title {
     font-weight: 600;
-    text-transform: uppercase; /* Forçar maiúsculo na palavra principal */
+    text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     margin-bottom: 4px;
@@ -233,32 +233,26 @@
   }
 
   .menu-group {
-    margin-bottom: 22px;
+    margin-bottom: 25px;
   }
 
-  /* Categoria em Marrom Destacado */
+  /* Títulos em MAIÚSCULO, negrito e na cor marrom destacado */
   .menu-group-title {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text-sepia); /* Marrom para categorias */
-    font-weight: 600;
-    margin-bottom: 4px;
+    color: var(--text-sepia);
+    font-weight: bold;
+    margin-bottom: 6px;
   }
 
-  /* Descrições em tom suave */
+  /* Descrições em letra menor, em itálico e na cor clara suave */
   .menu-item-name {
-    font-weight: 500;
-    font-size: 1.25rem;
-    color: var(--text-light); /* Cor clara para as descrições */
-  }
-
-  .menu-item-sub {
-    font-size: 1.05rem;
-    font-weight: 400;
+    font-size: 1.15rem;
     font-style: italic;
-    margin-top: 3px;
-    color: var(--text-light); /* Cor clara para acompanhamentos */
+    font-weight: 400;
+    color: var(--text-light);
+    line-height: 1.4;
   }
 
   /* PRESENTES E PIX */
@@ -379,11 +373,11 @@
     <div class="monogram-text">AJ</div>
   </div>
 
-  <!-- Nomes ajustados com o "e" simples e minúsculo -->
+  <!-- Nomes ajustados -->
   <h1 class="nomes-noivos">Allan e Isabela</h1>
   <div class="convite-texto">CONVIDAM: PARA RECEPÇÃO PÓS CASAMENTO CIVIL</div>
 
-  <!-- Frase do convite formatada inteiramente em itálico -->
+  <!-- Frase do convite -->
   <p class="frase-completa">
     <i>"Do caos da vida, escolhemos um ao outro.<br>
     Nos fortalecemos, nos transformamos<br>
@@ -399,7 +393,7 @@
     </div>
     <div class="detail-item">
       <div class="detail-title">🕐 HORÁRIO</div>
-      <strong class="detail-value">Inicio às 14h00 às 20h00</strong>
+      <strong class="detail-value">às 14h00 às 20h00</strong>
       <span>Almoço &amp; Recepção</span>
     </div>
     <div class="detail-item">
@@ -420,7 +414,7 @@
     <strong style="font-size: 1.25rem;">RENAN CASTRO MPB - ao vivo</strong>
   </div>
 
-  <!-- OBSERVAÇÃO SOBRE O CONDOMÍNIO (Intacta, como você amou!) -->
+  <!-- OBSERVAÇÃO SOBRE O CONDOMÍNIO -->
   <div class="local-obs-box">
     <div class="local-obs-titulo">⚠️ Observação Importante sobre o Local</div>
     <p>O endereço fornecido fica dentro de um condomínio. A recepção será realizada no <strong>salão de festas do prédio residencial</strong>.</p>
@@ -431,44 +425,38 @@
     </div>
   </div>
 
-  <!-- CARDÁPIO COMPLETO (Cores invertidas como solicitado!) -->
+  <!-- CARDÁPIO COMPLETO (Design e Paleta Ajustados com Contraste) -->
   <section class="cardapio-section">
     <h2 class="cardapio-titulo">Cardápio</h2>
     
     <div class="menu-group">
-      <div class="menu-group-title">Entrada</div>
+      <div class="menu-group-title">ENTRADA</div>
       <div class="menu-item-name">Salgados Diversos</div>
     </div>
 
     <div class="menu-group">
-      <div class="menu-group-title">Prato Principal</div>
-      <div class="menu-item-name">Feijoada Completa</div>
-      <div class="menu-item-sub">
-        Acompanha arroz branco, couve na manteiga, torresmo e bisteca
-      </div>
+      <div class="menu-group-title">PRATO PRINCIPAL</div>
+      <div class="menu-item-name">Feijoada Completa (acompanha arroz branco, couve na manteiga, torresmo e bisteca)</div>
     </div>
 
     <div class="menu-group">
-      <div class="menu-group-title">Saladas</div>
-      <div class="menu-item-name">Salada de Alface &amp; Salada Caesar</div>
-      <div class="menu-item-sub">
-        Acompanha frutas da estação
-      </div>
+      <div class="menu-group-title">SALADAS</div>
+      <div class="menu-item-name">Salada de Alface &amp; Salada Caesar (acompanha frutas da estação)</div>
     </div>
 
     <div class="menu-group">
-      <div class="menu-group-title">Sobremesa</div>
+      <div class="menu-group-title">SOBREMESA</div>
       <div class="menu-item-name">Pudim &amp; Torta de Limão</div>
     </div>
 
     <div class="menu-group">
-      <div class="menu-group-title">Bolo dos Noivos</div>
+      <div class="menu-group-title">BOLO DOS NOIVOS</div>
       <div class="menu-item-name">Nosso Favorito: Abacaxi 🍍</div>
     </div>
 
     <div class="menu-group">
-      <div class="menu-group-title">Bebidas</div>
-      <div class="menu-item-name">Água, Água com Gás, Sucos Naturais,<br>Refrigerante &amp; Refrigerante Zero</div>
+      <div class="menu-group-title">BEBIDAS</div>
+      <div class="menu-item-name">Água, Água com Gás, Sucos Naturais, Refrigerante &amp; Refrigerante Zero</div>
     </div>
   </section>
 
